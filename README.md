@@ -45,7 +45,7 @@ To remove LinConnect, delete the ~/.linconnect directory.
 Client Download
 ---------------
 
-![alt text](https://www.gstatic.com/android/market_images/web/play_one_bar_logo_2x.png "Google Play")
+[![Alt text](https://www.gstatic.com/android/market_images/web/play_one_bar_logo_2x.png "linconnect-client on Google Play")] (https://play.google.com/store/apps/details?id=com.willhauck.linconnectclient)
 
 A binary of the client may be downloaded from the Google Play Store.
 
