@@ -26,6 +26,7 @@ except ImportError:
     import configparser as ConfigParser
 import os
 import sys
+import signal
 import select
 import threading
 import platform
@@ -156,12 +157,17 @@ def register_callback(sdRef, flags, errorCode, name, regtype, domain):
     if errorCode == pybonjour.kDNSServiceErr_NoError:
         print("Registered Bonjour service " + name)
 
+def sigterm_handler(_signo, _stack_frame):
+     # Raises SystemExit(0):
+     sys.exit(0)
 
 def initialize_bonjour():
     sdRef = pybonjour.DNSServiceRegister(name=_service_name,
                                      regtype="_linconnect._tcp",
                                      port=int(parser.get('connection', 'port')),
                                      callBack=register_callback)
+    signal.signal(signal.SIGTERM, sigterm_handler)
+    signal.signal(signal.SIGINT, sigterm_handler)
     try:
         try:
             while True:
