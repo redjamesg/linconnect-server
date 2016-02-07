@@ -21,7 +21,10 @@ Installation
 * python-gobject
 * libavahi-compat-libdnssd1
 * cherrypy (python package)
+* * for debian (python-cherrypy3)
 * pybonjour (python package)
+* * Download [pybonjour] (https://code.google.com/archive/p/pybonjour/downloads)
+* * Install it (python setup.py install)
 
 **Running**
 
